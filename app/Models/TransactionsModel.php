@@ -5,15 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class transactionsModel extends Model
+class TransactionsModel extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id';
-    protected $table = 'android_app';
+
+    protected $table = 'transactions';
     protected $fillable = [
-        'name', 'link', 'active'
+        'id', 'status'
     ];
 
     public $timestamps = false;
+
+
+    public static function updateStatus($id, $data)
+    {
+        self::updateOrCreate(['id' => $id], ['status' => $data]);
+    }
 }
