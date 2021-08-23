@@ -15,7 +15,7 @@ class CreateTransactions extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->string('id')->unique();
-            $table->tinyInteger('status');
+            $table->string('status');
         });
     }
 

@@ -13,7 +13,7 @@ class ApiController extends Controller
         $transactionStatus = $transactionStatusInfo['status'];
         $transactionId = $transactionStatusInfo['id'];
 
-        TransactionsModel::updateStatus($transactionId, (bool) $transactionStatus);
+        TransactionsModel::updateStatus($transactionId, $transactionStatus);
 
         if ($transactionStatus === "false") {
             $error = $request->post('error');

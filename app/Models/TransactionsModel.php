@@ -17,9 +17,16 @@ class TransactionsModel extends Model
 
     public $timestamps = false;
 
+    /**
+     * Change transactions status.
+     *
+     * @param  string  $id
+     * @param  string  $data
+     */
 
     public static function updateStatus($id, $data)
     {
+
         self::updateOrCreate(['id' => $id], ['status' => $data]);
     }
 }

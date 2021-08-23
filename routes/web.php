@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () { return view('welcome');});
-Route::name('thank-you')->get('thank-you', function () { return view('thankYou');});
-Route::name('sorry')->get('sorry', 'App\Http\Controllers\SorryController@index');
+Route::name('thank-you')->get('thank-you', 'App\Http\Controllers\PaymentResult@viewSuccess');
+Route::name('sorry')->get('sorry', 'App\Http\Controllers\PaymentResult@viewFail');
